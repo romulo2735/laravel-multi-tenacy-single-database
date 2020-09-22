@@ -2,25 +2,17 @@
 
 namespace App\Models;
 
-use App\Observers\TenantObserver;
-use App\Scopes\Tenant\TenantScope;
+use App\Tenant\Traits\TenantTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, TenantTrait;
 
     protected $fillable = [
         'title', 'body'
     ];
-
-    protected static function boot()
-    {
-        parent::boot();
-        static::addGlobalScope(new TenantScope);
-        static::observe(new TenantObserver);
-    }
 
     public function user()
     {
