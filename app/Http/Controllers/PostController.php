@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\View\View;
+use App\Http\Requests\PostRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 
 class PostController extends Controller
 {
@@ -39,7 +40,7 @@ class PostController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         // pega o usuário logado, atribuido ao relacionamento de posts e cria a postagem.
         $request->user()->posts()->create($request->all());
