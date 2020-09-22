@@ -8,16 +8,21 @@ use Illuminate\Support\Facades\DB;
 
 class TenantUnique implements Rule
 {
-    private $table;
+    private $table, $column, $columnValue;
 
     /**
      * Create a new rule instance.
      *
+     * @param int $column valor da columa do banco de dados
+     * @param int $columnValue valor recebido do formulário
+     *
      * @return void
      */
-    public function __construct($table)
+    public function __construct($table, $columnValue = null, $column = 'id')
     {
         $this->table = $table;
+        $this->column = $column;
+        $this->columnValue = $columnValue;
     }
 
     /**
@@ -36,6 +41,9 @@ class TenantUnique implements Rule
             ->where('tenant_id', $tenant)
             ->first();
 
+        if ($query && $query->{$this->column} == $this->columnValue) {
+            return true;
+        }
         return is_null($query);
     }
 

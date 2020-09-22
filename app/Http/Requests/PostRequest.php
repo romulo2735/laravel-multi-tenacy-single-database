@@ -24,12 +24,14 @@ class PostRequest extends FormRequest
      */
     public function rules()
     {
+        // $this->segment(2) pega o valor da rota, na posição que ela ocupa.
+
         return [
             'title' => [
                 'required',
                 'min:3',
                 'max:100',
-                new TenantUnique('posts'),
+                new TenantUnique('posts', $this->segment(2)),
             ],
             'body' => 'required|max:1000',
         ];
