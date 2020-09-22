@@ -7,7 +7,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
-use Webpatser\Uuid\Uuid;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -22,8 +21,8 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:100', 'min:3', 'unique:tenants,id'],
-            'tenant' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:100', 'min:3'],
+            'tenant' => ['required', 'string', 'max:255', 'unique:tenants,id'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
         ])->validate();

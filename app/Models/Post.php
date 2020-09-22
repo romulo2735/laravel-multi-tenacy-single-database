@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory, TenantTrait;
 
     protected $fillable = [
-        'title', 'body'
+        'title', 'body', 'image', 'user_id'
     ];
 
     public function user()

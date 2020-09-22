@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\View\View;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\PostRequest;
@@ -42,7 +43,22 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        // pega o usuário logado, atribuido ao relacionamento de posts e cria a postagem.
+        $data = $request->all();
+
+        //* upload de imagens
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $name = Str::kebab($request->title);
+            $ext = $request->image->extension();
+            $file = "{$name}.$ext";
+            $data['image'] = $file;
+
+            $path = $request->image->storeAs('postagens', $file);
+            if (!$path) {
+                return redirect()->back()->with('erros', ['fail to upload']);
+            }
+        }
+
+        //* pega o usuário logado, atribuido ao relacionamento de posts e cria a postagem.
         $request->user()->posts()->create($request->all());
         return redirect()->back()->withSuccess('Action Successful');
     }
