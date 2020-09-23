@@ -25,6 +25,7 @@ class PostRequest extends FormRequest
     public function rules()
     {
         // $this->segment(2) pega o valor da rota, na posição que ela ocupa.
+        // $this->id pegando o valor passado pelo formulário.
 
         return [
             'title' => [

@@ -11,6 +11,7 @@ use App\Http\Requests\PostRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -96,7 +97,29 @@ class PostController extends Controller
     public function update(PostRequest $request, $id)
     {
         $post = Post::find($id);
-        $post->update($request->all());
+        $data = $request->all();
+
+        //* upload de imagens
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            // * remove a imagem caso exista, uma nova imagem enviada.
+            if ($post->image) {
+                if (Storage::exists("posts/{$post->image}")) {
+                    Storage::delete("posts/{$post->image}");
+                }
+            }
+
+            $name = Str::kebab($request->title);
+            $ext = $request->image->extension();
+            $file = "{$name}.$ext";
+            $data['image'] = $file;
+
+            $path = $request->image->storeAs('postagens', $file);
+            if (!$path) {
+                return redirect()->back()->with('erros', ['fail to upload']);
+            }
+        }
+
+        $post->update($data);
 
         return redirect()->back()->withSuccess('Action Successful');
     }
@@ -109,6 +132,13 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        if (!$post) {
+            return redirect()->back();
+        }
+
+        $post->delete();
+
+        return redirect()->back()->withSuccess('Action Successful');
     }
 }
