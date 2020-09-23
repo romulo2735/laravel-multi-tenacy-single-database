@@ -20,10 +20,10 @@ class CreatePostsTable extends Migration
             $table->string('image')->nullable();
 
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->unsignedInteger('tenant_id');
-            $table->foreign('tenant_id')->references('id')->on('tenants');
+            $table->foreign('tenant_id')->references('id')->on('tenants')->onDelete('cascade');
             $table->timestamps();
         });
     }

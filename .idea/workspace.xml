@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22873d93-0dff-4f90-aab2-fb788a82c3c7" name="Default Changelist" comment="" />
+    <list default="true" id="22873d93-0dff-4f90-aab2-fb788a82c3c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tenant/ManagerTenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tenant/ManagerTenant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_19_122855_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_19_122855_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/create.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +23,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -143,6 +156,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql&#10;mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -156,6 +170,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -175,7 +190,10 @@
       <workItem from="1600462862929" duration="2052000" />
       <workItem from="1600471531932" duration="3684000" />
       <workItem from="1600528974713" duration="6709000" />
-      <workItem from="1600636582510" duration="3078000" />
+      <workItem from="1600636582510" duration="8017000" />
+      <workItem from="1600736654241" duration="888000" />
+      <workItem from="1600811584241" duration="675000" />
+      <workItem from="1600822260478" duration="4084000" />
     </task>
     <servers />
   </component>
@@ -195,29 +213,37 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="764" y="188" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600534763902" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600644859583">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600644859583" />
     <state x="980" y="257" key="IDE.errors.dialog" timestamp="1600463249100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="980" y="257" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600463249100" />
-    <state x="629" y="226" key="NewPhpClassDialog" timestamp="1600637013921">
+    <state x="629" y="226" key="NewPhpClassDialog" timestamp="1600644811520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="629" y="226" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600637013921" />
+    <state x="629" y="226" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600644811520" />
     <state x="794" y="439" key="NewPhpFileDialog" timestamp="1600536006602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600536006602" />
-    <state width="583" height="446" key="SwitcherDM" timestamp="1600639682237">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1600823289087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="583" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600639682237" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600823289087" />
+    <state width="583" height="446" key="SwitcherDM" timestamp="1600644464812">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="583" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1600644464812" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1600537295064">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600537295064" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600639592188">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600825725412">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600639592188" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600825725412" />
   </component>
 </project>
